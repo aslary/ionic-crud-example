@@ -162,6 +162,7 @@ class MockDataService {
                 'Cancel',
                 {
                     text: 'Delete',
+                    role: 'delete',
                     handler: () => {
                         this.deleteCourse(course);
                     }

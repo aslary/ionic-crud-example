@@ -28,7 +28,7 @@ export class CourseDetailPage {
   async deleteCourse() {
     let alert = await this.mockDataService.deleteCourseWithAlert(this.course);
     alert.onDidDismiss().then(eventData => {
-      if (eventData.role !== 'cancel')
+      if (eventData.role === 'delete')
         this.router.navigateByUrl('home');
     });
   }
