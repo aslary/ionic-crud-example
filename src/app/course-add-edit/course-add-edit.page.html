@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        Close
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{isEditMode ? 'Edit' : 'Add'}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="addOrEdit()">
+        Save
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floating">Title</ion-label>
+    <ion-input [(ngModel)]="course.title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Creation date</ion-label>
+    <ion-datetime min="1970" max="2090" [(ngModel)]="course.creationDate"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Description</ion-label>
+    <ion-textarea autoGrow="true" [(ngModel)]="course.description"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Duration (h)</ion-label>
+    <ion-input min="0" type="number" [(ngModel)]="course.duration"></ion-input>
+  </ion-item>
+
+</ion-content>
